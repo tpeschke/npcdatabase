@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 
-export default class Search extends Component {
+import { connect } from 'react-redux'
+import { SETPAGE } from '../../../ducks/reducer'
+
+class Search extends Component {
+
+    componentDidMount() {
+        this.props.SETPAGE(this.props.match.url)
+    }
 
     render() {
         return (
@@ -10,3 +17,6 @@ export default class Search extends Component {
         )
     }
 }
+
+
+export default connect(null, {SETPAGE}) (Search)

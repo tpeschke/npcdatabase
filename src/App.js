@@ -4,6 +4,7 @@ import './App.css'
 import './reset.css'
 
 import Routes from './routes'
+import NavBar from './components/navBar/NavBar'
 
 export default class App extends Component {
 
@@ -11,6 +12,8 @@ export default class App extends Component {
 
         return (
             <div>
+                <NavBar />
+
                 <Routes />
             </div>
         )

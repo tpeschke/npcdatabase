@@ -5,10 +5,14 @@ import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
 
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './ducks/store'
 
 ReactDOM.render(
-    <Router>
-        <App />
-    </Router>
-, document.getElementById('root'));
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>
+    , document.getElementById('root'));
 // registerServiceWorker();
