@@ -12,7 +12,17 @@ class MyNPCs extends Component {
     render() {
         return (
             <div className="OuterComp">
-                MyNPCs
+                <h1 id="middleOptions">Search My Characters</h1>
+                <div className="tableComp headingComp">
+                    <h1 id="headerFirst">Name</h1>
+                    <h1>System</h1>
+                    <h1>Class/Background</h1>
+                    <h1>Race</h1>
+                    <h1>Export</h1>
+                </div>
+                <div>
+
+                </div>
             </div>
         )
     }

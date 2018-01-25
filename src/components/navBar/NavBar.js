@@ -24,7 +24,8 @@ class NavBar extends Component {
                         <h1>|</h1>
                         <Link style={{ textDecoration: 'none' }}
                             to='/search'>
-                                <h1  id={this.props.page==='/search'?'active':null}>Search</h1></Link>
+                                <h1  id={this.props.page==='/search'?'active':null}>
+                                    Search Database</h1></Link>
                     </div>
                 </div>
             )
