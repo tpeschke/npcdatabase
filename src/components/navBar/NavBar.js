@@ -11,9 +11,21 @@ class NavBar extends Component {
         if (this.props.page) {
             return (
                 <div className="OuterNav">
-                    <Link to='/home'><div>My NPCs</div></Link>
-                    <Link to='/addnew'><div>Add New</div></Link>
-                    <Link to='/search'><div>Search</div></Link>
+                    <div className="InnerNavLeft">
+                        <Link style={{ textDecoration: 'none' }}
+                            to='/home'>
+                                <h1 id={this.props.page==='/home'?'active':null}>
+                                    Home</h1></Link></div>
+                    <div className="InnerNavRight">
+                        <Link style={{ textDecoration: 'none' }}
+                            to='/addnew'>
+                                <h1 id={this.props.page==='/addnew'?'active':null}>
+                                    Add New</h1></Link>
+                        <h1>|</h1>
+                        <Link style={{ textDecoration: 'none' }}
+                            to='/search'>
+                                <h1  id={this.props.page==='/search'?'active':null}>Search</h1></Link>
+                    </div>
                 </div>
             )
         } else {

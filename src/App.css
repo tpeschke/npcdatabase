@@ -1,1 +1,42 @@
+body {
+    background: #333333;
+}
 
+button {
+    
+}
+/* ======================= */
+.OuterComp {
+    background: rgb(235, 224, 230);
+    margin: 0 35px;
+    min-height: 350px;
+    border-bottom: 10px solid black;
+    padding: 35px 20px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.bucketComp {
+
+}
+
+#login {
+    min-height: 125px;
+    min-width: 125px;
+    max-height: 125px;
+    max-width: 125px;
+    border-top: 10px solid black;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 0;
+    margin: 150px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* ======================= */
+h1 {
+    color: #333333;
+    font-weight: 800;
+} 

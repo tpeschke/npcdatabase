@@ -12,8 +12,10 @@ class AddNew extends Component {
     render() {
 
         return (
-            <div>
+            <div className="OuterComp">
+                <div className="bucketComp">
                 AddNew
+                </div>
             </div>
         )
     }

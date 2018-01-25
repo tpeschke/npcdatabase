@@ -5,7 +5,7 @@ export default class LogIn extends Component {
 
     render() {
         return (
-            <div>
+            <div className='OuterComp' id="login">
                 <Link to='/home'><button>log in</button></Link>
             </div>
         )

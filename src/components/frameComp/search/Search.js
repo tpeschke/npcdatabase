@@ -11,7 +11,7 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
+            <div className="OuterComp">
                 Search
             </div>
         )

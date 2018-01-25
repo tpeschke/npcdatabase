@@ -11,7 +11,7 @@ class MyNPCs extends Component {
 
     render() {
         return (
-            <div>
+            <div className="OuterComp">
                 MyNPCs
             </div>
         )
