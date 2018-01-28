@@ -16,12 +16,10 @@ button {
     border-bottom-right-radius: 3px;
 }
 
-.bucketComp {
-
-}
-
 .tableComp {
-    background: lightcoral
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .headingComp {
@@ -30,10 +28,22 @@ button {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     height: 30px;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+
+.tableBox {
+    width: 250px;
+    padding: 1px 0;
+    text-align: center;
+}
+
+.tableBottom {
+    border-bottom: 5px solid black;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#odd {
+    background: #33333325
 }
 
 #login {

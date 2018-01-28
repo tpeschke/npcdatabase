@@ -4,10 +4,26 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { SETPAGE } from '../../../ducks/reducer'
 
+import NPClist from './NPClist'
+
 class MyNPCs extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            npcs: []
+        }
+    }
 
     componentDidMount() {
         this.props.SETPAGE(this.props.match.url)
+        axios.get('/api/usercharacter').then((req,res) => {
+            this.setState({npcs: req.data})
+        })
+    }
+
+    componentWillUnmount() {
+        this.setState({npcs: []})
     }
 
     test = () => {
@@ -25,14 +41,15 @@ class MyNPCs extends Component {
                     >Search My Characters</button>
                 
                 <div className="tableComp headingComp">
-                    <h1 id="headerFirst">Name</h1>
-                    <h1>System</h1>
-                    <h1>Class/Background</h1>
-                    <h1>Race</h1>
-                    <h1>Export</h1>
+                    <h1 className="tableBox" id="headerFirst">Name</h1>
+                    <h1 className="tableBox">System</h1>
+                    <h1 className="tableBox">Class/Background</h1>
+                    <h1 className="tableBox">Race</h1>
+                    <h1 className="tableBox">Export</h1>
                 </div>
                 <div>
-
+                    <NPClist 
+                        npcs = {this.state.npcs}/>
                 </div>
             </div>
         )

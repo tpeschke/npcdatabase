@@ -32,6 +32,9 @@ app.get('/api/test', (req, res) => {
     res.send('hello')
 })
 
+app.get('/api/usercharacter', ctrl.getusercharacter)
+app.get('/api/character', ctrl.getallcharacter)
+
 
 const port = process.env.port
 

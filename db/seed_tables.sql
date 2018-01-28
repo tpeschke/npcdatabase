@@ -18,7 +18,10 @@ create table characters (
 -- insert into characters (characterName, gameSystem, background, idUsers)
 -- values ('Atticus Wulfgang', 'HackMaster', 'Cavalier', 1),
 --        ('Almog', 'HackMaster', 'Bard', 1)
---        ('Haverjack the Slippy', 'Magic-User', 'Cavalier', 1)
+--        ('Haverjack the Slippy', 'HackMaster', 'Magic-User', 1),
+        --   ('Gallien Half-Head', 'HackMaster', 'Fighter', 2),
+        --   ('Alastar Penarn', 'HackMaster', 'Knight', 2),
+        --   ('Kallie','HackMaster', 'Cavalier', 2)
 
 create table characterTraits (
     idTraits SERIAL PRIMARY KEY,
@@ -26,7 +29,7 @@ create table characterTraits (
     race VARCHAR(40),
     sex VARCHAR(40),
     ageNum int,
-    height VARCHAR(40),
+    heightNum VARCHAR(40),
     mass VARCHAR(40),
     hair VARCHAR(40),
     eyes VARCHAR(40),
@@ -36,3 +39,11 @@ create table characterTraits (
     idCharacters int,
         FOREIGN KEY (idCharacters) REFERENCES characters(idCharacters)
 )
+
+-- insert into charactertraits (alignment, race, sex, agenum, heightNum, mass, hair, eyes, god, anointed, handi, idcharacters)
+-- values ('LG', 'Human', 'Male', 22, '75in', '190lbs', 'brown', 'blue', 'Haelyn', '1', '1', 1 ),
+--        ('CG', 'Half-Elf', 'Male', 16, '68in', '165lbs','brown','green', null,'0', '3', 2 ),
+--        ('CN', 'Human', 'Male', 36, '48in', '265lbs','white','purple', null,'0', '2', 3 ),
+--          ('LE', 'Human', 'Male', 46, '73in', '197lbs', 'black', 'black', null, '0', '1', 7 ),
+--          ('LE', 'Human', 'Male', 56, '70in', '189lbs','auburn','black', 'Morrigan','1', '2', 8 ),
+--          ('CN', 'Human', 'Female', 20, '68in', '165lbs','blonde','blue', 'Haelyn','1', '1', 9 )
