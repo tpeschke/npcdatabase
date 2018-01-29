@@ -38,6 +38,8 @@ app.get('/api/usercharacter/level/:id', ctrl.getuserlevel)
 
 app.get('/api/usercharacter/default/:id', ctrl.getcharacterlevel)
 
+app.patch('/api/viewNPC', ctrl.getNPC)
+
 
 const port = process.env.port
 

@@ -25,5 +25,13 @@ module.exports = {
         const db = req.app.get('db')
 
         db.get_character_level(req.params.id).then(result => res.send(result))
+    },
+
+    getNPC: (req, res) => {
+        const db = req.app.get('db')
+        
+        var {id, level} = req.body
+
+        db.get_npc(id, level).then(result => res.send(result))
     }
 }
