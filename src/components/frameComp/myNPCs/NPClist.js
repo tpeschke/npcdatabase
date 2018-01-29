@@ -6,9 +6,15 @@ import LevelDrop from './LevelDrop'
 
 export default class NPClist extends Component {
 
+    createNPC = (id, level) => {
+        var tempArr = [id, +level]
+
+        this.props.SETNPC(tempArr)
+    }
+
     render() {
         var { npcs } = this.props
-        
+
         if (npcs) {
             var list = npcs.map((d, i) => {
                 return <div className="tableComp"
@@ -21,7 +27,9 @@ export default class NPClist extends Component {
                     <div className="tableBox"> 
                         <LevelDrop id={d.id} setLevel={this.props.setLevel}/> </div>
                     <Link style={{ textDecoration: 'none' }} to={`/${d.charactername}`}>
-                        <button className="tableBox">View</button> </Link>
+                        <button className="tableBox"
+                            onClick={_=> this.createNPC(d.id, d.level)}
+                            >View</button> </Link>
                 </div>
             })
         }

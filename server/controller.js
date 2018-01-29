@@ -19,5 +19,11 @@ module.exports = {
         const db = req.app.get('db')
 
         db.get_user_level(req.params.id).then(result => res.send(result))
+    },
+
+    getcharacterlevel: (req, res) => {
+        const db = req.app.get('db')
+
+        db.get_character_level(req.params.id).then(result => res.send(result))
     }
 }

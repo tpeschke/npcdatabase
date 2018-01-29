@@ -36,6 +36,8 @@ app.get('/api/usercharacter', ctrl.getusercharacter)
 app.get('/api/character', ctrl.getallcharacter)
 app.get('/api/usercharacter/level/:id', ctrl.getuserlevel)
 
+app.get('/api/usercharacter/default/:id', ctrl.getcharacterlevel)
+
 
 const port = process.env.port
 

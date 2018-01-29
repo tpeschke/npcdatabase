@@ -15,7 +15,6 @@ export default class LevelDrop extends Component {
         axios.get('/api/usercharacter/level/' + this.props.id).then((req, res) => {
             this.setState({level: req.data})
         })
-        
     }
 
     render() {

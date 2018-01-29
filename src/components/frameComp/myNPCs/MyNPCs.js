@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import { connect } from 'react-redux'
-import { SETPAGE } from '../../../ducks/reducer'
+import { SETPAGE, SETNPC } from '../../../ducks/reducer'
 
 import NPClist from './NPClist'
 
@@ -31,7 +31,6 @@ class MyNPCs extends Component {
             if (d.id === id) {
                 return Object.assign(d, {level : level})
             }
-            console.log(d.level)
         })
     }
 
@@ -54,7 +53,8 @@ class MyNPCs extends Component {
                 <div>
                     <NPClist 
                         npcs = {this.state.npcs}
-                        setLevel = {this.setLevel}/>
+                        setLevel = {this.setLevel}
+                        SETNPC = {this.props.SETNPC}/>
                 </div>
             </div>
         )
@@ -62,4 +62,4 @@ class MyNPCs extends Component {
 }
 
 
-export default connect(null, {SETPAGE}) (MyNPCs)
+export default connect(null, {SETPAGE, SETNPC}) (MyNPCs)
