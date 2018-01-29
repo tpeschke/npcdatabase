@@ -15,10 +15,12 @@ export default class LevelDrop extends Component {
         axios.get('/api/usercharacter/level/' + this.props.id).then((req, res) => {
             this.setState({level: req.data})
         })
+        
     }
 
     render() {
         var {level} = this.state
+        var {setLevel, id} = this.props
 
         if (level) {
             var options = level.map((d,i) => {
@@ -30,7 +32,7 @@ export default class LevelDrop extends Component {
 
         return (
             <div>
-                <select>
+                <select onChange={e => setLevel (id, e.target.value)}>
                     {options}
                 </select>
             </div>

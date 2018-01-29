@@ -26,9 +26,12 @@ class MyNPCs extends Component {
         this.setState({npcs: []})
     }
 
-    test = () => {
-        axios.get('/api/test').then((req, res) => {
-            console.log(req)
+    setLevel = (id, level) => {
+        this.state.npcs.forEach(d => {
+            if (d.id === id) {
+                return Object.assign(d, {level : level})
+            }
+            console.log(d.level)
         })
     }
 
@@ -37,7 +40,7 @@ class MyNPCs extends Component {
             <div className="OuterComp">
 
                 <button id="middleOptions"
-                    onClick={_=>this.test()}
+                    // onClick={_=>this.test()}
                     >Refine List</button>
                 
                 <div className="tableComp headingComp">
@@ -50,7 +53,8 @@ class MyNPCs extends Component {
                 </div>
                 <div>
                     <NPClist 
-                        npcs = {this.state.npcs}/>
+                        npcs = {this.state.npcs}
+                        setLevel = {this.setLevel}/>
                 </div>
             </div>
         )

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 
+import {Link} from 'react-router-dom'
+
 import LevelDrop from './LevelDrop'
 
 export default class NPClist extends Component {
+
     render() {
         var { npcs } = this.props
-
+        
         if (npcs) {
             var list = npcs.map((d, i) => {
                 return <div className="tableComp"
@@ -15,8 +18,10 @@ export default class NPClist extends Component {
                     <p className="tableBox">{d.gamesystem}</p>
                     <p className="tableBox">{d.background}</p>
                     <p className="tableBox">{d.race}</p>
-                    <div className="tableBox"> <LevelDrop id={d.id}/> </div>
-                    <button className="tableBox">View</button>
+                    <div className="tableBox"> 
+                        <LevelDrop id={d.id} setLevel={this.props.setLevel}/> </div>
+                    <Link style={{ textDecoration: 'none' }} to={`/${d.charactername}`}>
+                        <button className="tableBox">View</button> </Link>
                 </div>
             })
         }

@@ -6,6 +6,7 @@ import LogIn from './components/LogIn'
 import AddNew from './components/frameComp/addNew/addNew'
 import MyNPCs from './components/frameComp/myNPCs/MyNPCs'
 import Search from './components/frameComp/search/Search'
+import ViewNPC from './components/frameComp/viewNPC/ViewNPC'
 
 export default class Routes extends Component {
 
@@ -21,6 +22,8 @@ export default class Routes extends Component {
                         path='/search' component={Search} />
                     <Route 
                         path='/addnew' component={AddNew} />
+                    <Route 
+                        path='/:name' component={ViewNPC} />
                 </Switch>
             </div>
         )
