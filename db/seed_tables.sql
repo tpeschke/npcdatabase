@@ -47,3 +47,51 @@ create table characterTraits (
 --          ('LE', 'Human', 'Male', 46, '73in', '197lbs', 'black', 'black', null, '0', '1', 7 ),
 --          ('LE', 'Human', 'Male', 56, '70in', '189lbs','auburn','black', 'Morrigan','1', '2', 8 ),
 --          ('CN', 'Human', 'Female', 20, '68in', '165lbs','blonde','blue', 'Haelyn','1', '1', 9 )
+
+create table LevelTable (
+    idLevelTable serial primary key,
+    honor int,
+    fame int,
+    charLevel int,
+    str int,
+    intel int,
+    wis int,
+    dex int,
+    con int,
+    lks int,
+    charis int,
+    idCharacters int,
+        FOREIGN KEY (idCharacters) REFERENCES characters(idCharacters)
+        FOREIGN key (str) REFERENCES Strength(idStrength)
+        FOREIGN key (intel) REFERENCES Intelligence(idIntelligence)
+        FOREIGN key (wis) REFERENCES Wisdom(idWisdom)
+        FOREIGN key (dex) REFERENCES Dexterity(idDexterity)
+        FOREIGN key (con) REFERENCES Looks(idLooks)
+        FOREIGN key (charis) REFERENCES Charisma(idCharisma)
+)
+
+-- insert into leveltable (honor, fame, charlevel, idcharacters)
+-- values (25, 70, 9, 1 )
+
+
+create table Strength (
+    idStrength serial PRIMARY key
+)
+create table Intelligence (
+    idIntelligence serial PRIMARY key
+)
+create table Wisdom (
+    idWisdom serial PRIMARY key
+)
+create table Dexterity (
+    idDexterity serial PRIMARY key
+)
+create table Constitution (
+    idConstitution serial PRIMARY key
+)
+create table Charisma (
+    idCharisma serial PRIMARY key
+)
+create table Looks (
+    idLooks serial PRIMARY key
+)

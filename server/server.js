@@ -3,7 +3,7 @@ const express = require('express')
     , bodyParser = require('body-parser')
     , dotenv = require('dotenv').config()
     , massive = require('massive')
-    , ctrl = require('./controlller')
+    , ctrl = require('./controller')
     , app = new express()
 
 app.use(bodyParser.json())
@@ -34,6 +34,7 @@ app.get('/api/test', (req, res) => {
 
 app.get('/api/usercharacter', ctrl.getusercharacter)
 app.get('/api/character', ctrl.getallcharacter)
+app.get('/api/usercharacter/level/:id', ctrl.getuserlevel)
 
 
 const port = process.env.port

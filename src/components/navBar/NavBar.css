@@ -4,6 +4,8 @@
     align-items: center;
     margin: 35px 35px 0 35px;
     height: 45px;
+    width: 900px;
+    margin: 75px auto 0 auto;
     background: #CCC5B9;
     border-bottom: 8px solid black;
     border-top-left-radius: 3px;

@@ -38,14 +38,15 @@ class MyNPCs extends Component {
 
                 <button id="middleOptions"
                     onClick={_=>this.test()}
-                    >Search My Characters</button>
+                    >Refine List</button>
                 
                 <div className="tableComp headingComp">
                     <h1 className="tableBox" id="headerFirst">Name</h1>
                     <h1 className="tableBox">System</h1>
                     <h1 className="tableBox">Class/Background</h1>
                     <h1 className="tableBox">Race</h1>
-                    <h1 className="tableBox">Export</h1>
+                    <h1 className="tableBox">level(s)</h1>
+                    <h1 className="tableBox"></h1>
                 </div>
                 <div>
                     <NPClist 

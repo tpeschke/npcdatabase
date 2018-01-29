@@ -4,6 +4,8 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { SETPAGE } from '../../../ducks/reducer'
 
+import TotalNPClist from './TotalNPClist'
+
 class Search extends Component {
     constructor() {
         super()
@@ -34,11 +36,12 @@ class Search extends Component {
                     <h1 className="tableBox">System</h1>
                     <h1 className="tableBox">Class/Background</h1>
                     <h1 className="tableBox">Race</h1>
-                    <h1 className="tableBox">Export</h1>
+                    <h1 className="tableBox">level(s)</h1>
+                    <h1 className="tableBox"></h1>
                 </div>
                 <div>
-                    {/* <NPClist 
-                        npcs = {this.state.npcs}/> */}
+                    <TotalNPClist 
+                        npcs = {this.state.npcs}/>
                 </div>
             </div>
         )

@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 
-export default class NPClist extends Component {
+export default class TotalNPClist extends Component {
     render() {
         var {npcs} = this.props
-        console.log(npcs)
 
         if (npcs) {
             var list = npcs.map((d,i) => {
@@ -14,7 +13,8 @@ export default class NPClist extends Component {
                         <p className="tableBox">{d.gamesystem}</p>
                         <p className="tableBox">{d.background}</p>
                         <p className="tableBox">{d.race}</p>
-                        <button className="tableBox">Export</button>
+                        <h1 className="tableBox">level</h1>
+                        <button className="tableBox">View</button>
                         </div>
             })
         }
