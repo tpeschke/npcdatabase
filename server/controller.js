@@ -29,9 +29,12 @@ module.exports = {
 
     getNPC: (req, res) => {
         const db = req.app.get('db')
-        
+        var tempArr = []
         var {id, level} = req.body
 
-        db.get_npc(id, level).then(result => res.send(result))
+        tempArr.push(db.get_npc_info(id).then())
+        tempArr.push(db.get_npc_level(id,level).then())
+
+        Promise.all(tempArr).then(result => res.send(result))
     }
 }

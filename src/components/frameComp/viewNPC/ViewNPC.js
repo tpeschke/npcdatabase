@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 
 import Viewer from './WarriorPDF'
-import './ViewNPC.css'
 
 class ViewNPC extends Component {
     constructor() {
@@ -13,7 +12,35 @@ class ViewNPC extends Component {
         this.state = {
             id: null,
             level: null,
-            viewedNPC: []
+            infoNPC: {
+                agenum:16,
+                alignment:"CG",
+                background:"Bard",
+                charactername:"Almog",
+                eyes:"green",
+                gamesystem:"HackMaster",
+                god:null,
+                hair:"brown",
+                handi:"3",
+                heightnum:"68in",
+                mass:"165lbs",
+                race:"Half-Elf",
+                sex:"Male"
+            },
+            levelNPC : {
+                charis:null,
+                charlevel:3,
+                con:null,
+                dex:null,
+                fame:10,
+                honor:8,
+                idcharacters:2,
+                idleveltable:7,
+                intel:null,
+                lks:null,
+                str:null,
+                wis:null
+            }
         }
     }
 
@@ -23,7 +50,8 @@ class ViewNPC extends Component {
             axios.get('/api/usercharacter/default/' + npc[0]).then((req, res) => {
                 this.setState({ level: req.data[0].charlevel, id: npc[0] })
                 axios.patch('/api/viewNPC', this.state).then((req, res) => {
-                    this.setState({ viewedNPC: req.data[0] })
+                    console.log(req.data)
+                    // this.setState({ viewedNPC: req.data[0] })
                 })
             })
         } else {
@@ -36,13 +64,29 @@ class ViewNPC extends Component {
 
     render() {
 
-        console.log(this.state.viewedNPC)
+        console.log(this.state.infoNPC)
+
+        var {infoNPC, levelNPC} = this.state
 
         return (
             <div className="OuterComp">
-                
-                {/* <Viewer 
-                    NPC = {this.state.viewedNPC}/> */}
+                <div className="characterSheet">
+                    <div className="characterInfo">
+                        <h1 className="character Name">{infoNPC.charactername}</h1>
+                        <h1 className="character Background">{infoNPC.background}</h1>
+                        <h1 className="character Level">{levelNPC.charlevel}</h1>
+                        <h1 className="character Alignment">{infoNPC.alignment}</h1>
+
+                        <h1 className="character Race">{infoNPC.race}</h1>
+                        <h1 className="character Sex">{infoNPC.sex}</h1>
+                        <h1 className="character Age">{infoNPC.agenum}</h1>
+                        <h1 className="character Height">{infoNPC.heightnum}</h1>
+                        <h1 className="character Weight">{infoNPC.mass}</h1>
+                        <h1 className="character Hair">{infoNPC.hair}</h1> 
+                        <h1 className="character Eyes">{infoNPC.eyes}</h1>
+                                               
+                    </div>
+                </div>
             </div>
         )
     }

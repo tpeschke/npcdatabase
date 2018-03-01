@@ -14,7 +14,6 @@ export default class NPClist extends Component {
 
     render() {
         var { npcs } = this.props
-
         if (npcs) {
             var list = npcs.map((d, i) => {
                 return <div className="tableComp"

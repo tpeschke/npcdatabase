@@ -66,7 +66,81 @@ button {
 #middleOptions {
     margin: -20px 0 15px 0;
 }
+/* ======================= */
 
+.characterSheet {
+    background-image: url('./img/00001.jpg');
+    height: 1115px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.characterInfo {
+    position: absolute;
+    /* background: rgba(240, 128, 128, 0.514); */
+    height: 110px;
+    width: 600px;
+}
+
+.character {
+    position: absolute
+}
+
+.Name {
+    top: 30px;
+    left: 80px;
+}
+
+.Background {
+    top: 30px;
+    left: 323px;
+}
+
+.Level {
+    top: 30px;
+    left: 467px;
+}
+
+.Alignment {
+    top: 30px;
+    left: 546px;
+}
+
+.Race {
+    top: 55px;
+    left: 57px;
+}
+
+.Sex {
+    top: 55px;
+    left: 140px;
+}
+
+.Age {
+    top: 55px;
+    left: 205px;
+}
+
+.Height {
+    top: 55px;
+    left: 276px;
+}
+
+.Weight {
+    top: 55px;
+    left: 355px;
+}
+
+.Hair {
+    top: 55px;
+    left: 430px;
+}
+
+.Eyes {
+    top: 55px;
+    left: 522px;
+}
 /* ======================= */
 h1 {
     color: #333333;
