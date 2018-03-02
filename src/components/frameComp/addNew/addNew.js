@@ -1,24 +1,59 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { SETPAGE } from '../../../ducks/reducer'
+import axios from 'axios'
 
-class AddNew extends Component {
+import Page1 from '../viewNPC/Page1'
+import Page2 from '../viewNPC/Page2'
+
+class ViewNPC extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            page: true,
+            id: null,
+            level: null,
+            infoNPC: {},
+            levelNPC : {}
+        }
+    }
 
     componentDidMount() {
-        this.props.SETPAGE(this.props.match.url)
+       
+    }
+
+    changePlay = () => {
+        if (this.state.page) {
+            return <Page1
+            levelNPC={this.state.levelNPC} 
+            infoNPC={this.state.infoNPC}/>
+        } 
+            return <Page2
+            levelNPC={this.state.levelNPC} 
+            infoNPC={this.state.infoNPC}/>
     }
 
     render() {
 
         return (
             <div className="OuterComp">
-                <div className="bucketComp">
-                AddNew
+                <div>
+                    <button 
+                        onClick={_=>this.setState({page:!this.state.page})}>
+                        {this.state.page?'2nd Page':'1st Page'}</button>
                 </div>
+
+                {this.changePlay()}
             </div>
         )
     }
 }
 
-export default connect(null, {SETPAGE}) (AddNew)
+function mapStateToProps(state) {
+    return {
+        npc: state.npc
+    }
+}
+
+export default connect(mapStateToProps, null)(ViewNPC)

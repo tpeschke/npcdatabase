@@ -68,6 +68,26 @@ button {
 }
 /* ======================= */
 
+.searchDropdown {
+    display: flex;
+    justify-content: space-around;
+    height: 93px;
+    width: 100%;
+    overflow-y: hidden;
+    transition: .6s
+}
+
+.searchInner {
+    background: whitesmoke;
+    border: 2px inset lightgrey;
+    height: 75px;
+    width: 98%
+}
+
+.closed {
+    height: 0;
+}
+/* ======================== */
 .characterSheet {
     background-image: url('./img/00001.jpg');
     height: 1115px;
@@ -76,11 +96,50 @@ button {
     position: relative;
 }
 
+.characterSheetPage2 {
+    background-image: url('./img/00002.jpg');
+    height: 1115px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
 .characterInfo {
     position: absolute;
-    /* background: rgba(240, 128, 128, 0.514); */
     height: 110px;
     width: 600px;
+}
+
+.characterAbilities {
+    position: absolute;
+    top: 139px;
+    left: 45px;
+    height: 339px;
+    width: 413px;
+}
+
+.characterWeapons {
+    position: absolute;
+    top: 484px;
+    left: 25px;
+    height: 610px;
+    width: 410px;
+}
+
+.characterRoseArea {
+    position: absolute;
+    top: 220px;
+    left: 467px;
+    height: 480px;
+    width: 368px;
+}
+
+.characterSpells {
+    position: absolute;
+    top: 703px;
+    left: 443px;
+    height: 385px;
+    width: 390px;
 }
 
 .character {
@@ -140,6 +199,16 @@ button {
 .Eyes {
     top: 55px;
     left: 522px;
+}
+
+.Gawd {
+    top: 80px;
+    left: 100px;
+}
+
+.Handi {
+    top: 80px;
+    left: 418px;
 }
 /* ======================= */
 h1 {

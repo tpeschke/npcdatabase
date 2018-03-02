@@ -5,13 +5,15 @@ import { connect } from 'react-redux'
 import { SETPAGE, SETNPC } from '../../../ducks/reducer'
 
 import NPClist from './NPClist'
+import SearchList from './SearchList'
 
 class MyNPCs extends Component {
     constructor() {
         super()
 
         this.state = {
-            npcs: []
+            npcs: [],
+            search: false
         }
     }
 
@@ -39,9 +41,12 @@ class MyNPCs extends Component {
             <div className="OuterComp">
 
                 <button id="middleOptions"
-                    // onClick={_=>this.test()}
+                    onClick={_=>this.setState({search:!this.state.search})}
                     >Refine List</button>
                 
+                <SearchList 
+                    show={this.state.search}/>
+
                 <div className="tableComp headingComp">
                     <h1 className="tableBox" id="headerFirst">Name</h1>
                     <h1 className="tableBox">System</h1>
