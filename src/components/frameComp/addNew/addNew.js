@@ -19,10 +19,6 @@ class ViewNPC extends Component {
         }
     }
 
-    componentDidMount() {
-       
-    }
-
     changePlay = () => {
         if (this.state.page) {
             return <Page1
